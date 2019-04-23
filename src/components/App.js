@@ -3,13 +3,31 @@ import '../css/App.css';
 import Header from './Header';
 import Form from './Form';
 import Expenses from './Expenses';
-
+import { validarPresupuesto, revisarPresupuesto } from '../helpers';
 
 export default class App extends Component {
   state = {
     budget: '',
     remaining: '',
     expenses: {}
+  }
+
+  componentDidMount () {
+    this.getBudget();
+  }
+
+  getBudget = () => {
+    let budget = prompt('What is the budget?');
+    let result = validarPresupuesto(budget);
+
+    if (result) {
+      this.setState({
+        budget,
+        remaining: budget
+      });
+    } else {
+      this.getBudget();
+    }
   }
 
   addExpense = (expense) => {
