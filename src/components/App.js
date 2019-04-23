@@ -4,7 +4,7 @@ import Header from './Header';
 import Form from './Form';
 import Expenses from './Expenses';
 import ControlBudget from './ControlBudget';
-import { validarPresupuesto, revisarPresupuesto } from '../helpers';
+import { validarPresupuesto } from '../helpers';
 
 export default class App extends Component {
   state = {
@@ -36,9 +36,22 @@ export default class App extends Component {
 
     expenses[`expense${Date.now()}`] = expense;
     
+    this.subtractBudget(expense.money)
+
     this.setState({
       expenses
     });    
+  }
+
+  subtractBudget = (money) => {
+    let subtract = Number(money);
+    let remaining = this.state.remaining;
+
+    remaining -= subtract;
+
+    this.setState({
+      remaining
+    });
   }
 
   render() {

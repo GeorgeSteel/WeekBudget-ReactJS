@@ -10,6 +10,7 @@ export default class ControlBudget extends Component {
             budget={ this.props.budget }
         />
         <Remaining
+            budget={ this.props.budget }
             remaining={ this.props.remaining }
         />
       </div>
