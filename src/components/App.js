@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../css/App.css';
 import Header from './Header';
 import Form from './Form';
+import Expenses from './Expenses';
 
 
 export default class App extends Component {
@@ -35,7 +36,9 @@ export default class App extends Component {
               />
             </div>
             <div className="one-half column">
-              2
+              <Expenses
+                expenses={ this.state.expenses }
+              />
             </div>
           </div>
         </div>
