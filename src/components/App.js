@@ -3,6 +3,7 @@ import '../css/App.css';
 import Header from './Header';
 import Form from './Form';
 import Expenses from './Expenses';
+import ControlBudget from './ControlBudget';
 import { validarPresupuesto, revisarPresupuesto } from '../helpers';
 
 export default class App extends Component {
@@ -56,6 +57,10 @@ export default class App extends Component {
             <div className="one-half column">
               <Expenses
                 expenses={ this.state.expenses }
+              />
+              <ControlBudget
+                budget={ this.state.budget }
+                remaining= { this.state.remaining }
               />
             </div>
           </div>
