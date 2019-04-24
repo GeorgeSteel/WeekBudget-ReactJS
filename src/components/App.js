@@ -49,6 +49,8 @@ export default class App extends Component {
 
     remaining -= subtract;
 
+    remaining = String(remaining);
+
     this.setState({
       remaining
     });

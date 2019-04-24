@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Budget from './Budget';
 import Remaining from './Remaining';
 
@@ -16,4 +17,9 @@ export default class ControlBudget extends Component {
       </div>
     )
   }
+}
+
+ControlBudget.propTypes = {
+  budget: PropTypes.string.isRequired,
+  remaining: PropTypes.string.isRequired
 }
